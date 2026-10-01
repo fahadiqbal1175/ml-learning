@@ -1,0 +1,7 @@
+tensorflow>=2.16
+gymnasium[classic-control]>=1.0
+pygame
+imageio
+matplotlib
+numpy
+jupyter
