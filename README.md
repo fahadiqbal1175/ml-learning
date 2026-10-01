@@ -71,6 +71,20 @@ There are **notebooks** covering the full journey from calculus basics to recomm
 | Notebook | What it covers |
 |---|---|
 | [State_action_value_function_drone](State_action_value_function_drone.ipynb) | State-action value function Q(s, a) with the Bellman equation, campus delivery drone scenario |
+| [acrobot-dqn](acrobot-dqn/) | Deep Q-Network (DQN) on Gymnasium's Acrobot, with experience replay, soft-updated target network, and a custom TensorFlow training loop. Has its own folder with a README, requirements, and a GIF of the trained agent |
+
+#### Featured: Acrobot DQN
+
+A neural network learns to swing a two-link pendulum above a target line in as few steps as possible.
+
+![Trained DQN agent on Acrobot](acrobot-dqn/acrobot_dqn.gif)
+
+| Agent | Mean reward over 20 episodes |
+|---|---|
+| Random | about -499 (always hits the 500 step limit) |
+| Trained DQN (greedy) | about -90 (reaches the goal in roughly 90 steps) |
+
+The environment was solved in 228 episodes (about 3 minutes on a CPU). Concepts covered: Q-network for a continuous state space, target network with soft update, experience replay, epsilon-greedy exploration with decay, Bellman targets, and correct handling of `terminated` vs `truncated`. See the [acrobot-dqn folder](acrobot-dqn/) for details and setup.
 
 ---
 
@@ -80,6 +94,7 @@ There are **notebooks** covering the full journey from calculus basics to recomm
 - NumPy, Pandas, Matplotlib
 - scikit-learn, XGBoost
 - TensorFlow / Keras
+- Gymnasium (reinforcement learning environments), ImageIO
 - SymPy
 - Jupyter Notebook, ipywidgets
 
@@ -103,6 +118,12 @@ There are **notebooks** covering the full journey from calculus basics to recomm
 
    ```bash
    pip install numpy pandas matplotlib scikit-learn xgboost tensorflow sympy ipywidgets tabulate jupyter
+   ```
+
+   The `acrobot-dqn` project has its own dependencies (Gymnasium, pygame, ImageIO), so install those with:
+
+   ```bash
+   pip install -r acrobot-dqn/requirements.txt
    ```
 
 4. Launch Jupyter and open any notebook
